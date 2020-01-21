@@ -15,6 +15,7 @@ import { LandingComponent } from './views/pages/landing/landing.component';
 import { ProductsComponent } from './views/pages/products/products.component';
 import { ContactComponent } from './views/pages/contact/contact.component';
 import { CartComponent } from './views/pages/cart/cart.component';
+import { AccountProfileComponent } from './views/pages/account-profile/account-profile.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CartComponent } from './views/pages/cart/cart.component';
     LandingComponent,
     ProductsComponent,
     ContactComponent,
-    CartComponent
+    CartComponent,
+    AccountProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,18 @@
 <div class="container">
-    <div class="row d-flex justify-content-center" *ngFor="let cart of checkout" >
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">{{cart}}</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+    <div class="row" *ngFor="let cart of checkout">
+        <div class="col-4">
+            <img src={{cart.img}} alt="">
         </div>
-        <hr>
+        <div class="col-2 d-flex justify-content-center flex-column">
+            <p>{{cart.name}}</p>
+            <p>{{cart.price}}</p>
+            <p>{{cart.qty}}</p>
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-center">
+            <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Remove From Cart"></button>
+        </div>
+        <div class="col-12">
+            <hr class="line">
+        </div>
     </div>
 </div>
