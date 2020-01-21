@@ -2,8 +2,26 @@
     background-image: url(../../../../assets/background/Contact.jpg);
     background-size: cover;
     background-position: center center;
-    height: 33vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+h1{
+    color: white;
+}
+.box-size-a{
+    width: 350px;
+}
+.box-size-b{
+    width: 350px;
+    height: 100px;
+}
+.icon-size{
+    width: 70px;
+    height: 60px;
+}
+.icon-size-a{
+    width: 50px;
+    height: 50px;
 }
