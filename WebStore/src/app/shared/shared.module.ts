@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SubtotalPipe } from './pipes/subtotal.pipe';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [SubtotalPipe],
   imports: [
     CommonModule
   ]

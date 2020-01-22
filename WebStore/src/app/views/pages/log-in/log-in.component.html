@@ -1,13 +1,21 @@
 <p-sidebar [(visible)]="display" [fullScreen]="true">
+    <br><br class="py-5">
+    <h1 class="d-flex justify-content-center py-5">SIGN IN</h1>
     <div class="ui-g ui-fluid d-flex justify-content-center">
         <div class="ui-g-12 ui-md-4">
             <div class="ui-inputgroup">
                 <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
                 <input type="text" pInputText placeholder="Username">
             </div>
+            <br><br><br>
             <input type="password" pPassword pInputText placeholder="password"/>
         </div>
     </div>
+    <br class="py-5">
+    <div class="row d-flex justify-content-center">
+        <p-button class="px-5" label="Sign in" (onClick)="handleClick($event)"></p-button>
+        <p-button class="px-5" label="Cancel" (onClick)="handleClick($event)"></p-button>
+    </div>
 </p-sidebar>
 
-<button type="text" (click)="display = true" pButton icon="pi pi-plus" label="Show"></button>
+<button type="text" (click)="display = true" pButton label="Show"></button>
