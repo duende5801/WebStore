@@ -6,6 +6,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ButtonModule} from 'primeng/button';
 import {RatingModule} from 'primeng/rating';
+import {SidebarModule} from 'primeng/sidebar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { ProductsComponent } from './views/pages/products/products.component';
 import { ContactComponent } from './views/pages/contact/contact.component';
 import { CartComponent } from './views/pages/cart/cart.component';
 import { AccountProfileComponent } from './views/pages/account-profile/account-profile.component';
+import { LogInComponent } from './views/pages/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { AccountProfileComponent } from './views/pages/account-profile/account-p
     ProductsComponent,
     ContactComponent,
     CartComponent,
-    AccountProfileComponent
+    AccountProfileComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { AccountProfileComponent } from './views/pages/account-profile/account-p
     InputTextModule,
     InputTextareaModule,
     ButtonModule,
-    RatingModule
+    RatingModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+<p-sidebar [(visible)]="display" [fullScreen]="true">
+    <div class="ui-g ui-fluid d-flex justify-content-center">
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+                <input type="text" pInputText placeholder="Username">
+            </div>
+            <input type="password" pPassword pInputText placeholder="password"/>
+        </div>
+    </div>
+</p-sidebar>
+
+<button type="text" (click)="display = true" pButton icon="pi pi-plus" label="Show"></button>
