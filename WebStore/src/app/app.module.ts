@@ -19,6 +19,8 @@ import { ContactComponent } from './views/pages/contact/contact.component';
 import { CartComponent } from './views/pages/cart/cart.component';
 import { AccountProfileComponent } from './views/pages/account-profile/account-profile.component';
 import { LogInComponent } from './views/pages/log-in/log-in.component';
+import { ShippingFormComponent } from './views/pages/shipping-form/shipping-form.component';
+import { CreditFormComponent } from './views/pages/credit-form/credit-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { LogInComponent } from './views/pages/log-in/log-in.component';
     ContactComponent,
     CartComponent,
     AccountProfileComponent,
-    LogInComponent
+    LogInComponent,
+    ShippingFormComponent,
+    CreditFormComponent
   ],
   imports: [
     BrowserModule,

@@ -23,10 +23,10 @@
             <div class="container">
                 <div class="row pt-5">
                     <div class="col">
-                        <p>Subtotal: <span *ngFor="let price of checkout">{{price.price}}</span></p>
-                        <p>Tax: </p>
+                        <p>Subtotal: {{total|currency}}</p>
+                        <p>Tax: {{tax|currency}}</p>
                         <hr>
-                        <p>Total: </p>
+                        <p>Total: {{total|currency}} </p>
                         <button pButton type="button" class="ui-button-raised ui-button-rounded"
                             label="Proceed to Checkout"></button>
                     </div>

@@ -37,7 +37,8 @@ nav ul li a{
   text-transform: uppercase;
 }
 a.active,a:hover{
-  background: #1b9bff;
+  background: white;
+  color: #333 !important;
   transition: .5s;
 }
 .checkbtn{
@@ -85,7 +86,7 @@ a.active,a:hover{
   }
   a:hover,a.active{
     background: none;
-    color: #0082e6;
+    color: white
   }
   #check:checked ~ ul{
     left: 0;

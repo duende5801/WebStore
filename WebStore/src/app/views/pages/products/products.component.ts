@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PhoneCase } from 'src/app/shared/interfaces/phone-case';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   val: number = 3;
-  products: any[] = [
+  products: PhoneCase[] = [
     {
       img: 'assets/phone-cases/case1.png',
       name: 'PhoneCase 1',
@@ -16,7 +17,6 @@ export class ProductsComponent implements OnInit {
       description: 'cool case1',
       price: 40,
       rating: 5,
-      quantity: 1,
     },
     {
       img: 'assets/phone-cases/case2.jpg',
@@ -25,7 +25,6 @@ export class ProductsComponent implements OnInit {
       description: 'cool case2',
       price:  40,
       rating: 4,
-      quantity: 1,
     },
     {
       img: 'assets/phone-cases/case3.jpg',
@@ -34,7 +33,6 @@ export class ProductsComponent implements OnInit {
       description: 'cool case3',
       price: 40,
       rating: 3,
-      quantity: 1,
     },
     {
       img: 'assets/phone-cases/case4.jpg',
@@ -43,7 +41,6 @@ export class ProductsComponent implements OnInit {
       description: 'cool case4',
       price: 40,
       rating: 4.5,
-      quantity: 1,
     },
     {
       img: 'assets/phone-cases/case5.jpg',
@@ -52,7 +49,6 @@ export class ProductsComponent implements OnInit {
       description: 'cool case5',
       price:  40,
       rating: 4.2,
-      quantity: 1,
     },
     {
       img: 'assets/phone-cases/case6.jpg',
@@ -61,7 +57,6 @@ export class ProductsComponent implements OnInit {
       description: 'cool case6',
       price: 40,
       rating: 3.7,
-      quantity: 1,
     },
     {
       img: 'assets/phone-cases/case7.png',
@@ -70,7 +65,6 @@ export class ProductsComponent implements OnInit {
       description: 'cool case7',
       price: 40,
       rating: 3.4,
-      quantity: 1,
     },
     {
       img: 'assets/phone-cases/case8.jpg',
@@ -79,7 +73,6 @@ export class ProductsComponent implements OnInit {
       description: 'cool case8',
       price:  40,
       rating: 4.1,
-      quantity: 1,
     },
     {
       img: 'assets/phone-cases/case9.jpg',
@@ -88,7 +81,6 @@ export class ProductsComponent implements OnInit {
       description: 'cool case9',
       price: 40,
       rating: 4.9,
-      quantity: 1,
     }
   ];
 
