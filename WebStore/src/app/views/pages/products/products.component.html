@@ -1,34 +1,32 @@
 <div class="container">
-    <div class="row d-flex">
-        <div class="col-4-md m-4" *ngFor="let item of products">
-            <div class="card">
-                <img src={{item.img}} class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p-overlayPanel #op>
-                      <img src={{item.img}} class="card-img-top" alt="...">
-                      <h5 class="card-title">{{item.name}}</h5>
-                        <p class="card-text">{{item.description}}
-                        <br>{{item.phone}}
-                        <br>{{item.price|currency}}
-                        <br><p-rating (ngModel)=5 readonly="true" [cancel]="false"></p-rating>
-                        </p>
-                        <button pButton type="button" class="ui-button-raised ui-button-rounded"
-                        label="Add to Cart"></button>
-                </p-overlayPanel>
-                
-                <button type="text" pButton label="Basic" (click)="op.toggle($event)"></button>
-                <h5 class="card-title">{{item.name}}</h5>
-                  <p class="card-text">{{item.description}}
-                  <br>{{item.phone}}
-                  <br>{{item.price|currency}}
-                  <br><p-rating (ngModel)=5 readonly="true" [cancel]="false"></p-rating>
-                  </p>
-                </div>
-                <div class="card-footer d-flex justify-content-center">
-                  <button pButton type="button" class="ui-button-raised ui-button-rounded"
-                  label="Add to Cart"></button>
-                </div>
-              </div>
+  <div class="row ">
+    <div class="col-4-md m-4" *ngFor="let item of products">
+      <p-overlayPanel class="ml-0 pl-0" #op>
+        <img src={{item.img}} class="card-img-top" alt="...">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}
+          <br>{{item.phone}}
+          <br>{{item.price|currency}}
+          <br>
+          <p-rating (ngModel)=5 readonly="true" [cancel]="false"></p-rating>
+        </p>
+        <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Add to Cart"></button>
+      </p-overlayPanel>
+      <div class="card">
+        <a (click)="op.toggle($event)" ><img src={{item.img}} class="card-img-top" alt="product image"></a>
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">{{item.description}}
+            <br>{{item.phone}}
+            <br>{{item.price|currency}}
+            <br>
+            <p-rating (ngModel)=5 readonly="true" [cancel]="false"></p-rating>
+          </p>
         </div>
+        <div class="card-footer d-flex justify-content-center">
+          <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Add to Cart"></button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
