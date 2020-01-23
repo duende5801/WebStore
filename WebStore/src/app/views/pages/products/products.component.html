@@ -1,9 +1,10 @@
+<app-header></app-header>
 <div class="container">
   <div class="row ">
     <div class="col-4-md m-4" *ngFor="let item of products">
       <p-overlayPanel class="ml-0 pl-0" #op>
-        <img src={{item.img}} class="card-img-top" alt="...">
-        <h5 class="card-title">{{item.name}}</h5>
+        <img class="panel" src={{item.img}}>
+        <h5>{{item.name}}</h5>
         <p class="card-text">{{item.description}}
           <br>{{item.phone}}
           <br>{{item.price|currency}}
