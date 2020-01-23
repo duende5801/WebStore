@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {SidebarModule} from 'primeng/sidebar';
 import {RatingModule} from 'primeng/rating';
 import {PasswordModule} from 'primeng/password';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -20,7 +21,8 @@ import { CreditFormComponent } from './pages/credit-form/credit-form.component';
     CommonModule,
     RatingModule,
     SidebarModule,
-    PasswordModule
+    PasswordModule,
+    OverlayPanelModule
   ]
 })
 export class ViewsModule { }

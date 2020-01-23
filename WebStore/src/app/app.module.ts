@@ -7,6 +7,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ButtonModule} from 'primeng/button';
 import {RatingModule} from 'primeng/rating';
 import {SidebarModule} from 'primeng/sidebar';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +47,8 @@ import { CreditFormComponent } from './views/pages/credit-form/credit-form.compo
     InputTextareaModule,
     ButtonModule,
     RatingModule,
-    SidebarModule
+    SidebarModule,
+    OverlayPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

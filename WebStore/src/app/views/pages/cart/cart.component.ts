@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartItem } from 'src/app/shared/interfaces/cart-item';
 
 @Component({
   selector: 'app-cart',
@@ -7,6 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class CartComponent implements OnInit {
+  example: CartItem[] = [
+    {
+      product: {
+        img: 'assets/phone-cases/case1.png',
+        name: 'PhoneCase 1',
+        phone: 'iPhone11 Max',
+        description: 'cool case1',
+        price: 40,
+        rating: 5,
+      },
+      quantity: 5
+    },
+    
+  ];
+
   checkout: any[] = [
     {
       img: 'assets/phone-cases/case1.png',
@@ -22,7 +38,7 @@ export class CartComponent implements OnInit {
       name: 'PhoneCase 2',
       phone: 'iPhone11 Max',
       description: 'cool case2',
-      price:  40,
+      price: 40,
       rating: 4,
       quantity: 1,
     },
@@ -42,11 +58,11 @@ export class CartComponent implements OnInit {
   tax: number = 0;
   total: number = 0;
   ngOnInit() {
-    for(let product of this.checkout) {
+    for (let product of this.checkout) {
       this.subtotal += product.price;
     }
-    this.tax=this.subtotal*0.09;
-    this.total=this.subtotal+this.tax
+    this.tax = this.subtotal * 0.09;
+    this.total = this.subtotal + this.tax
   }
 
 }

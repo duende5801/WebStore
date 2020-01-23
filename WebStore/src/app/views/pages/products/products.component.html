@@ -4,6 +4,19 @@
             <div class="card">
                 <img src={{item.img}} class="card-img-top" alt="...">
                 <div class="card-body">
+                  <p-overlayPanel #op>
+                      <img src={{item.img}} class="card-img-top" alt="...">
+                      <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.description}}
+                        <br>{{item.phone}}
+                        <br>{{item.price|currency}}
+                        <br><p-rating (ngModel)=5 readonly="true" [cancel]="false"></p-rating>
+                        </p>
+                        <button pButton type="button" class="ui-button-raised ui-button-rounded"
+                        label="Add to Cart"></button>
+                </p-overlayPanel>
+                
+                <button type="text" pButton label="Basic" (click)="op.toggle($event)"></button>
                 <h5 class="card-title">{{item.name}}</h5>
                   <p class="card-text">{{item.description}}
                   <br>{{item.phone}}
