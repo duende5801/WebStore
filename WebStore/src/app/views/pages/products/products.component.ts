@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhoneCase } from 'src/app/shared/interfaces/phone-case';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -83,10 +84,12 @@ export class ProductsComponent implements OnInit {
       rating: 4.9,
     }
   ];
-
-  constructor() { }
+  phoneType: string;
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit() {
+    this.phoneType = this.router.snapshot.paramMap.get('id');
+    console.log(this.phoneType)
   }
 
 }

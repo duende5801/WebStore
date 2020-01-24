@@ -9,9 +9,11 @@ import { ContactComponent } from './views/pages/contact/contact.component';
 
 const routes: Routes = [
   {path: 'home', component: LandingComponent },
-  {path: 'products', component: ProductsComponent },
+  {path: 'products/:id', component: ProductsComponent },
   {path: 'cart', component: CartComponent },
-  {path: 'LogIn', component: LogInComponent },
+  {path: 'LogIn', component: LogInComponent, 
+  children: [
+  ] },
   {path: 'contact', component: ContactComponent },
   {path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: '**', redirectTo: '/home', pathMatch: 'full'}

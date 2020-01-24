@@ -8,6 +8,8 @@ import {ButtonModule} from 'primeng/button';
 import {RatingModule} from 'primeng/rating';
 import {SidebarModule} from 'primeng/sidebar';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
+import {DropdownModule} from 'primeng/dropdown';
+import { FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +50,9 @@ import { CreditFormComponent } from './views/pages/credit-form/credit-form.compo
     ButtonModule,
     RatingModule,
     SidebarModule,
-    OverlayPanelModule
+    OverlayPanelModule,
+    DropdownModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
