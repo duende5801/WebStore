@@ -13,21 +13,23 @@
         </p>
         <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Add to Cart"></button>
       </p-overlayPanel>
-      <div class="card">
-        <a (click)="op.toggle($event)" ><img src={{item.img}} class="card-img-top" alt="product image"></a>
-        <div class="card-body">
-          <h5 class="card-title">{{item.name}}</h5>
-          <p class="card-text">{{item.description}}
-            <br>{{item.phone}}
-            <br>{{item.price|currency}}
-            <br>
-            <p-rating (ngModel)=5 readonly="true" [cancel]="false"></p-rating>
-          </p>
+      <a (click)="op.toggle($event)">
+        <div class="card">
+          <img src={{item.img}} class="card-img-top" alt="product image">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.description}}
+              <br>{{item.phone}}
+              <br>{{item.price|currency}}
+              <br>
+              <p-rating (ngModel)=5 readonly="true" [cancel]="false"></p-rating>
+            </p>
+          </div>
+          <div class="card-footer d-flex justify-content-center">
+            <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Add to Cart"></button>
+          </div>
         </div>
-        <div class="card-footer d-flex justify-content-center">
-          <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Add to Cart"></button>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
