@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
   val: number;
   phoneType: string;
   products: PhoneCase[];
-  cart: PhoneCase[] =[];
+  cart: CartItem[] =[];
   constructor(private router: ActivatedRoute, private dService: DataService, private cService: DataService) { }
 
   ngOnInit() {
@@ -22,23 +22,27 @@ export class ProductsComponent implements OnInit {
     this.phoneType = this.router.snapshot.paramMap.get('id');
     this.products = this.filterProducts(this.phoneType);
   }
-
+  
   filterProducts(x: string): PhoneCase[] {
     return this.products.filter(products => products.phone === this.phoneType);
   }
+
   addToCart(product: PhoneCase){
-    // cart = this.products.push(product);
-    this.cart = {
-      id: product.id,
-      img: product.img,
-      name: product.name,
-      phone: product.phone,
-      description: product.description,
-      price: product.price,
-      rating: product.rating,
-      quantity: product.quantity
-    };
+    this.cart.push(product);
     console.log("this is the add to cart click", product);
+    console.log("this is the cart[]", this.cart)
+  //   this.cart = [
+  //     {
+  //     id: product.id,
+  //     img: product.img,
+  //     name: product.name,
+  //     phone: product.phone,
+  //     description: product.description,
+  //     price: product.price,
+  //     rating: product.rating,
+  //     quantity: product.quantity
+  //   }
+  // ];
   }
 
 }
