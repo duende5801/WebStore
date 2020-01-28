@@ -1,6 +1,10 @@
-import { PhoneCase } from './phone-case';
-
 export interface CartItem {
-    product: PhoneCase;
+    id: number;
+    img: string;
+    name: string;
+    phone: string;
+    description: string;
+    price: number;
+    rating: number;
     quantity: number;
 }
