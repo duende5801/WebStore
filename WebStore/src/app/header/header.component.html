@@ -4,8 +4,12 @@
   <label routerLink='/home' routerLinkActive="active" class="logo">KaazX</label>
   <ul class="nav">
     <li class="nav-item">
-      
-      <p-dropdown [options]="phonesDD" [(ngModel)]="selectedPhone" optionLabel="name"><a routerLink='/products' routerLinkActive="active" class="nav-link" >Device</a></p-dropdown>
+      <a (mouseenter)="op.toggle($event)">Device</a>
+      <p-overlayPanel #op>
+        <a *ngFor="let product of products" routerLink='/products' routerLinkActive="active" class="nav-link">
+          {{product.name}}
+        </a>
+      </p-overlayPanel>
     </li>
     <li class="nav-item">
       <a routerLink='/contact' routerLinkActive="active" class="nav-link" >Contact</a>

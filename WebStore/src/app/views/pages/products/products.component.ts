@@ -10,7 +10,7 @@ import { DataService } from 'src/app/shared/data.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  val: number = 3;
+  val: number;
   phoneType: string;
   products: PhoneCase[];
   constructor(private router: ActivatedRoute, private dService: DataService) { }
@@ -18,7 +18,11 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.products = this.dService.getProducts();
     this.phoneType = this.router.snapshot.paramMap.get('id');
-    console.log(this.phoneType)
+  }
+
+  filterProducts(): PhoneCase[] {
+    console.log(this.phoneType);
+    return this.products;
   }
 
 }
