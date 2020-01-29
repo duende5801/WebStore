@@ -14,4 +14,10 @@ export class CartService {
     return this.cart;
   }
 
+  setCartItems(cartItems: CartItem[])
+  {
+    this.cart = cartItems;
+    console.log("I am in cart service", this.cart);
+  }
+
 }

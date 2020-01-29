@@ -10,6 +10,7 @@ import {SidebarModule} from 'primeng/sidebar';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {DropdownModule} from 'primeng/dropdown';
 import { FormsModule }   from '@angular/forms';
+import {ToastModule} from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -52,7 +53,8 @@ import { CreditFormComponent } from './views/pages/credit-form/credit-form.compo
     SidebarModule,
     OverlayPanelModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
