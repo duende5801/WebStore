@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 })
 export class CartService {
 
-  cart: CartItem[] = []
+  cart: CartItem[] = [];
   constructor() { }
 
   getCartItems(): CartItem[] {

@@ -11,9 +11,7 @@ const routes: Routes = [
   {path: 'home', component: LandingComponent },
   {path: 'products/:id', component: ProductsComponent },
   {path: 'cart', component: CartComponent },
-  {path: 'LogIn', component: LogInComponent, 
-  children: [
-  ] },
+  {path: 'LogIn', component: LogInComponent},
   {path: 'contact', component: ContactComponent },
   {path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: '**', redirectTo: '/home', pathMatch: 'full'}

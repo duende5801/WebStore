@@ -10,21 +10,25 @@ import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  styleUrls: ['./products.component.scss'],
+  providers: [MessageService]
 })
 export class ProductsComponent implements OnInit {
   val: number;
   phoneType: string;
   products: PhoneCase[];
-  cart: CartItem[] =[];
-  constructor(private router: ActivatedRoute, private dService: DataService, private cService: CartService) { }
-
-  ngOnInit() {
+  cart: CartItem[] = [];
+  // tslint:disable-next-line: max-line-length
+  constructor(private router: ActivatedRoute, private dService: DataService, private cService: CartService, private messageService: MessageService) { }
+  showSuccess() {
+    this.messageService.add({severity:'success', summary: 'Success Message', detail:'Order submitted'});
+}
+ngOnInit() {
     this.products = this.dService.getProducts();
     this.phoneType = this.router.snapshot.paramMap.get('id');
     this.products = this.filterProducts(this.phoneType);
   }
-  
+
   filterProducts(x: string): PhoneCase[] {
     return this.products.filter(products => products.phone === this.phoneType);
   }
@@ -33,9 +37,9 @@ export class ProductsComponent implements OnInit {
     //Add to cart button - first push into an empty array above then apply setCartItem from cService
     this.cart.push(product);
     this.cService.setCartItems(this.cart);
-    //this.messageService.add({key: 'myKey1', severity:'success', summary: 'Summary Text', detail: 'Detail Text'});
+    this.showSuccess();
     console.log("this is the add to cart click", product);
-    console.log("this is the cart[]", this.cart)
+    console.log("this is the cart[]", this.cart);
   //   this.cart = [
   //     {
   //     id: product.id,

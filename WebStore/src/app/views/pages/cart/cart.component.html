@@ -21,18 +21,7 @@
             </div>
         </div>
         <div class="col-2">
-            <div class="container">
-                <div class="row pt-5">
-                    <div class="col">
-                        <p>Subtotal: {{total|currency}}</p>
-                        <p>Tax: {{tax|currency}}</p>
-                        <hr>
-                        <p>Total: {{total|currency}} </p>
-                        <button pButton type="button" class="ui-button-raised ui-button-rounded"
-                            label="Proceed to Checkout"></button>
-                    </div>
-                </div>
-            </div>
+            <app-preview-cart></app-preview-cart>
         </div>
     </div>
 </div>

@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
       this.subtotal += product.price;
     }
     this.tax = this.subtotal * 0.09;
-    this.total = this.subtotal + this.tax
+    this.total = this.subtotal + this.tax;
   }
 
 }

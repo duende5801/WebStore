@@ -9,7 +9,7 @@ import {RatingModule} from 'primeng/rating';
 import {SidebarModule} from 'primeng/sidebar';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {DropdownModule} from 'primeng/dropdown';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {ToastModule} from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,7 @@ import { AccountProfileComponent } from './views/pages/account-profile/account-p
 import { LogInComponent } from './views/pages/log-in/log-in.component';
 import { ShippingFormComponent } from './views/pages/shipping-form/shipping-form.component';
 import { CreditFormComponent } from './views/pages/credit-form/credit-form.component';
+import { PreviewCartComponent } from './views/pages/preview-cart/preview-cart.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CreditFormComponent } from './views/pages/credit-form/credit-form.compo
     AccountProfileComponent,
     LogInComponent,
     ShippingFormComponent,
-    CreditFormComponent
+    CreditFormComponent,
+    PreviewCartComponent
   ],
   imports: [
     BrowserModule,
