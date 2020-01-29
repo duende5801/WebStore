@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
   phoneType: string;
   products: PhoneCase[];
   cart: CartItem[] =[];
-  constructor(private router: ActivatedRoute, private dService: DataService, private cService: CartService, private messageService: MessageService) { }
+  constructor(private router: ActivatedRoute, private dService: DataService, private cService: CartService) { }
 
   ngOnInit() {
     this.products = this.dService.getProducts();
