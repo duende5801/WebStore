@@ -5,11 +5,11 @@
   <ul class="nav">
     <li class="nav-item">
       <a (mouseenter)="op.toggle($event)">Device</a>
-      <!-- <p-overlayPanel #op>
+      <p-overlayPanel #op>
         <a *ngFor="let product of products" routerLink='/products' routerLinkActive="active" class="nav-link">
           {{product.name}}
         </a>
-      </p-overlayPanel> -->
+      </p-overlayPanel>
     </li>
     <li class="nav-item">
       <a routerLink='/contact' routerLinkActive="active" class="nav-link" >Contact</a>

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SidebarModule } from 'primeng/sidebar';
 import { RatingModule } from 'primeng/rating';
 import { PasswordModule } from 'primeng/password';
-import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ToastModule } from 'primeng/toast';
 
 import { LandingComponent } from './pages/landing/landing.component';
@@ -22,7 +21,6 @@ import { SharedModule } from 'primeng/api/shared';
     RatingModule,
     SidebarModule,
     PasswordModule,
-    OverlayPanelModule,
     ToastModule,
     SharedModule
   ]

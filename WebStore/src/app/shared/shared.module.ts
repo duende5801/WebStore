@@ -4,6 +4,7 @@ import { AccountProfileComponent } from './components/account-profile/account-pr
 import { CartComponent } from './components/cart/cart.component';
 import { ProductsComponent } from './components/products/products.component';
 import { HeaderComponent } from './components/header/header.component';
+import { OverlayPanelModule } from 'primeng/overlaypanel/overlaypanel';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    OverlayPanelModule
+
   ],
   exports: [
     AccountProfileComponent,

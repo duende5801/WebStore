@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {SelectItem} from 'primeng/api';
-import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 interface Phone {
   name: string;
