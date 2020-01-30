@@ -7,6 +7,7 @@ import { CartService } from 'src/app/shared/cart.service';
 import {MessageService} from 'primeng/api';
 
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -14,10 +15,11 @@ import {MessageService} from 'primeng/api';
   providers: [MessageService]
 })
 export class ProductsComponent implements OnInit {
-  val: number;
+
   phoneType: string;
   products: PhoneCase[];
   cart: CartItem[] = [];
+
   // tslint:disable-next-line: max-line-length
   constructor(private router: ActivatedRoute, private dService: DataService, private cService: CartService, private messageService: MessageService) { }
   showSuccess() {
@@ -40,18 +42,6 @@ ngOnInit() {
     this.showSuccess();
     console.log("this is the add to cart click", product);
     console.log("this is the cart[]", this.cart);
-  //   this.cart = [
-  //     {
-  //     id: product.id,
-  //     img: product.img,
-  //     name: product.name,
-  //     phone: product.phone,
-  //     description: product.description,
-  //     price: product.price,
-  //     rating: product.rating,
-  //     quantity: product.quantity
-  //   }
-  // ];
   }
 
 }

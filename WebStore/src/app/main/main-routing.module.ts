@@ -9,8 +9,8 @@ const routes: Routes = [
     path: '', // == /main
     component: MainComponent,
     children: [
-      { path: 'products', component: ProductsComponent},
-      { path: 'cart', component: CartComponent} // info/about
+      { path: 'products/:id', component: ProductsComponent},
+      { path: 'cart', component: CartComponent} // main/cart
     ]
   }
 ];

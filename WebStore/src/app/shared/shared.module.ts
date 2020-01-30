@@ -4,7 +4,12 @@ import { AccountProfileComponent } from './components/account-profile/account-pr
 import { CartComponent } from './components/cart/cart.component';
 import { ProductsComponent } from './components/products/products.component';
 import { HeaderComponent } from './components/header/header.component';
-import { OverlayPanelModule } from 'primeng/overlaypanel/overlaypanel';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { SidebarModule } from 'primeng/sidebar';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
+import { RatingModule } from 'primeng/rating';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,14 +21,24 @@ import { OverlayPanelModule } from 'primeng/overlaypanel/overlaypanel';
   ],
   imports: [
     CommonModule,
-    OverlayPanelModule
-
+    OverlayPanelModule,
+    SidebarModule,
+    ButtonModule,
+    RatingModule,
+    FormsModule,
+    ToastModule
   ],
   exports: [
     AccountProfileComponent,
     CartComponent,
     ProductsComponent,
-    HeaderComponent
+    HeaderComponent,
+    OverlayPanelModule,
+    SidebarModule,
+    ToastModule,
+    ButtonModule,
+    RatingModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {SelectItem} from 'primeng/api';
 
 interface Phone {
   name: string;
@@ -25,5 +24,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
 }
