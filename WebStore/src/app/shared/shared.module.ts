@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     RatingModule,
     FormsModule,
-    ToastModule
+    ToastModule,
+    RouterModule
   ],
   exports: [
     AccountProfileComponent,

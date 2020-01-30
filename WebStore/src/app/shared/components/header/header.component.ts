@@ -17,12 +17,12 @@ export class HeaderComponent implements OnInit {
   selectedPhone: Phone;
 
   constructor() {
+  }
+  
+  ngOnInit() {
     this.products = [
       {name: 'iPhone'}, {name: 'Samsung'}, {name: 'Google'}
     ];
-  }
-
-  ngOnInit() {
   }
 
 

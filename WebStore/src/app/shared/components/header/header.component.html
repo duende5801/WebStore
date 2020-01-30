@@ -6,7 +6,7 @@
     <li class="nav-item">
       <a (mouseenter)="op.toggle($event)">Device</a>
       <p-overlayPanel #op>
-        <a *ngFor="let product of products" routerLink='/products' routerLinkActive="active" class="nav-link">
+        <a *ngFor="let product of products" routerLink='/main/products/{{product.name}}' routerLinkActive="active" class="nav-link">
           {{product.name}}
         </a>
       </p-overlayPanel>
@@ -15,7 +15,7 @@
       <a routerLink='/contact' routerLinkActive="active" class="nav-link" >Contact</a>
     </li>
     <li>
-      <a routerLink='/cart' routerLinkActive="active" ><img class="cart" src="assets/images/shopping-cart.png" alt=""></a>
+      <a routerLink='/main/cart' routerLinkActive="active" ><img class="cart" src="assets/images/shopping-cart.png" alt=""></a>
     </li>
     <li>
       <p-sidebar [(visible)]="display" [fullScreen]="true">
