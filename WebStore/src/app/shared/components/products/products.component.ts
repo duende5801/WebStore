@@ -34,14 +34,17 @@ ngOnInit() {
   filterProducts(x: string): PhoneCase[] {
     return this.products.filter(products => products.phone === this.phoneType);
   }
-
-  addToCart(product: PhoneCase){
-    //Add to cart button - first push into an empty array above then apply setCartItem from cService
-    this.cart.push(product);
-    this.cService.setCartItems(this.cart);
-    this.showSuccess();
-    console.log("this is the add to cart click", product);
-    console.log("this is the cart[]", this.cart);
+  addToCart(item){
+    this.cService.addItemsToCart(item);
+    console.log("this is ", item)
   }
+  // addToCart(product: PhoneCase){
+  //   //Add to cart button - first push into an empty array above then apply setCartItem from cService
+  //   this.cart.push(product);
+  //   this.cService.setCartItems(this.cart);
+  //   this.showSuccess();
+  //   console.log("this is the add to cart click", product);
+  //   console.log("this is the cart[]", this.cart);
+  // }
 
 }

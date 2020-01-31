@@ -11,7 +11,7 @@
           <br>
           <p-rating [(ngModel)]='item.rating' [readonly]="true" [cancel]="false"></p-rating>
         </p>
-        <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Add to Cart"></button>
+        <button pButton type="button" (click)="addToCart(item)" class="ui-button-raised ui-button-rounded" label="Add to Cart"></button>
       </p-overlayPanel>
       <div class="card">
         <a (click)="op.toggle($event)">
