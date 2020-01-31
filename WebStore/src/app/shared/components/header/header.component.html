@@ -16,7 +16,7 @@
     <a routerLink='/main/cart' routerLinkActive="active"><i class="fa fa-shopping-cart"></i></a>
   </li>
   <li class="nav-item">
-    <i (click)="display = true" class="fa fa-user pointer"></i>
+    <a (click)="display = true"><i class="fa fa-user pointer"></i></a>
     <p-sidebar [(visible)]="display" [fullScreen]="true">
       <br><br class="py-5">
       <h1 class="d-flex justify-content-center py-5">SIGN IN</h1>
