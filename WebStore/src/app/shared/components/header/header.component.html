@@ -1,49 +1,45 @@
-<nav>
-  <input type="checkbox" id="check">
-  <label for="check" class="checkbtn"><i class="fa fa-bars"></i></label>
-  <label routerLink='/home' routerLinkActive="active" class="logo">KaazX</label>
-  <ul class="nav">
-    <li class="nav-item">
-      <a (mouseenter)="op.toggle($event)">Device</a>
-      <p-overlayPanel #op>
-        <a *ngFor="let product of products" routerLink='/main/products/{{product.name}}' routerLinkActive="active" class="nav-link">
-          {{product.name}}
-        </a>
-      </p-overlayPanel>
-    </li>
-    <li class="nav-item">
-      <a routerLink='/contact' routerLinkActive="active" class="nav-link" >Contact</a>
-    </li>
-    <li>
-      <a routerLink='/main/cart' routerLinkActive="active" ><img class="cart" src="assets/images/shopping-cart.png" alt=""></a>
-    </li>
-    <li>
-      <p-sidebar [(visible)]="display" [fullScreen]="true">
-        <br><br class="py-5">
-        <h1 class="d-flex justify-content-center py-5">SIGN IN</h1>
-        <div class="ui-g ui-fluid d-flex justify-content-center">
-            <div class="ui-g-12 ui-md-4">
-                <div class="ui-inputgroup">
-                    <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
-                    <input type="text" pInputText placeholder="Username">
-                </div>
-                <br><br><br>
-                <input type="password" pPassword pInputText placeholder="password"/>
-            </div>
+<ul class="nav justify-content-end">
+  <label routerLink='/home' routerLinkActive="active" class="logo">Case-X</label>
+  <li class="nav-item">
+    <a (mouseenter)="op.toggle($event)" class="pointer">Device</a>
+    <p-overlayPanel #op>
+      <a *ngFor="let product of products" routerLink='/main/products/{{product.name}}' routerLinkActive="active"
+        class="nav-link link-font">
+        {{product.name}}
+      </a>
+    </p-overlayPanel>
+  </li>
+  <li class="nav-item">
+    <a routerLink='/contact' routerLinkActive="active" class="nav-link">Contact</a>
+  </li>
+  <li class="nav-item">
+    <a routerLink='/main/cart' routerLinkActive="active"><i class="fa fa-shopping-cart"></i></a>
+  </li>
+  <li class="nav-item">
+    <i (click)="display = true" class="fa fa-user pointer"></i>
+    <p-sidebar [(visible)]="display" [fullScreen]="true">
+      <br><br class="py-5">
+      <h1 class="d-flex justify-content-center py-5">SIGN IN</h1>
+      <div class="ui-g ui-fluid d-flex justify-content-center">
+        <div class="ui-g-12 ui-md-4">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+            <input type="text" pInputText placeholder="Username">
+          </div>
+          <br><br><br>
+          <input type="password" pPassword pInputText placeholder="password" />
         </div>
-        <br class="py-5">
-        <div class="row d-flex justify-content-center">
-            <p>Need an Account?  </p>
-            <a href="">Create Account </a>
-        </div>
-        <br>
-        <div class="row d-flex justify-content-center">
-            <p-button class="px-5" label="Sign in" (onClick)="handleClick($event)"></p-button>
-            <p-button class="px-5" label="Cancel" (onClick)="handleClick($event)"></p-button>
-        </div>
+      </div>
+      <br class="py-5">
+      <div class="row d-flex justify-content-center">
+        <p>Need an Account? </p>
+        <a href="">Create Account </a>
+      </div>
+      <br>
+      <div class="row d-flex justify-content-center">
+        <p-button class="px-5" label="Sign in" (onClick)="handleClick($event)"></p-button>
+        <p-button class="px-5" label="Cancel" (onClick)="handleClick($event)"></p-button>
+      </div>
     </p-sidebar>
-    
-    <img class="cart" (click)="display = true" src="assets/images/loginLogo.png" alt="">
-        </li>
-  </ul>
-</nav>
+  </li>
+</ul>
