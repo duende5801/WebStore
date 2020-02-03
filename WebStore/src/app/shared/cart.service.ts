@@ -21,8 +21,8 @@ export class CartService {
   constructor() { }
 
   addItemsToCart(item: PhoneCase) {
-    let cartItem = this.cartItems.find(x => x.id === item.id);
-    this.cartQuantity++
+    const cartItem = this.cartItems.find(x => x.id === item.id);
+    this.cartQuantity++;
     if (cartItem) {
       cartItem.quantity++;
     } else {
@@ -42,19 +42,18 @@ export class CartService {
     const totalPrice = item.quantity * +item.price;
     this.cartTotal -= totalPrice;
     this.cartQuantity -= item.quantity;
-    
+
     this.$cartItems.next(this.cartItems);
     this.$cartTotal.next(this.cartTotal);
     this.$cartQuantity.next(this.cartQuantity);
   }
-  
-  getCartItems(): CartItem[] {
+// use this set/get method if not using observables
+/*   getCartItems(): CartItem[] {
     return this.cart;
   }
-  
-  setCartItems(cartItems: CartItem[])
-  {
+  setCartItems(cartItems: CartItem[]) {
     this.cart = cartItems;
-    console.log("I am in cart service", this.cart);
+    console.log('I am in cart service', this.cart);
   }
+ */
 }

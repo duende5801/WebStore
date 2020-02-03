@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
   // tslint:disable-next-line: max-line-length
   constructor(private router: ActivatedRoute, private dService: DataService, private cService: CartService, private messageService: MessageService) { }
   showSuccess() {
-    this.messageService.add({severity:'success', summary: 'Success Message', detail:'Order submitted'});
+    this.messageService.add({severity: 'success', summary: 'Success Message', detail: 'Order submitted'});
 }
 ngOnInit() {
     this.products = this.dService.getProducts();
@@ -34,9 +34,10 @@ ngOnInit() {
   filterProducts(x: string): PhoneCase[] {
     return this.products.filter(products => products.phone === this.phoneType);
   }
-  addToCart(item){
+  addToCart(item) {
     this.cService.addItemsToCart(item);
-    console.log("this is ", item)
+    this.showSuccess();
+    console.log('this is ', item);
   }
   // addToCart(product: PhoneCase){
   //   //Add to cart button - first push into an empty array above then apply setCartItem from cService

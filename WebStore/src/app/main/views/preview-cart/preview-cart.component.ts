@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CartItem } from 'src/app/shared/interfaces/cart-item';
 import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
@@ -8,20 +7,18 @@ import { CartService } from 'src/app/shared/cart.service';
   styleUrls: ['./preview-cart.component.scss']
 })
 export class PreviewCartComponent implements OnInit {
-  checkout: CartItem [] = [];
+  cartTotal = 0;
+  tax = 0;
+  total = 0;
 
-  constructor(private cService: CartService) {        //apply the return function in cService
-        for (let product of this.checkout) {
-          this.subtotal += product.price;
-        }
-        this.tax = this.subtotal * 0.09;
-        this.total = this.subtotal + this.tax; }
-  subtotal: number = 0;
-  tax: number = 0;
-  total: number = 0;
+  constructor(private cService: CartService) { }
 
   ngOnInit() {
-
+    this.cService.$cartTotal.subscribe(total => {
+      this.cartTotal = total;
+      this.tax = this.cartTotal * 0.09;
+      this.total = this.cartTotal + this.tax;
+    });
   }
 
 }

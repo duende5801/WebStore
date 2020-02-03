@@ -4,7 +4,7 @@
     <a (mouseenter)="op.toggle($event)" class="pointer">Device</a>
     <p-overlayPanel #op>
       <a *ngFor="let product of products" routerLink='/main/products/{{product.name}}' routerLinkActive="active"
-        class="nav-link link-font">
+        class="nav-link link-font colorOverlay">
         {{product.name}}
       </a>
     </p-overlayPanel>
@@ -13,7 +13,7 @@
     <a routerLink='/contact' routerLinkActive="active" class="nav-link">Contact</a>
   </li>
   <li class="nav-item">
-    <a routerLink='/main/cart' routerLinkActive="active"><i class="fa fa-shopping-cart"></i></a>
+    <a routerLink='/main/cart' routerLinkActive="active"><i class="fa fa-shopping-cart"><span class="badge badge-warning">{{cartCount}}</span></i></a>
   </li>
   <li class="nav-item">
     <a (click)="display = true"><i class="fa fa-user pointer"></i></a>

@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row pt-5">
         <div class="col">
-            <p>Subtotal: {{total|currency}}</p>
+            <p>Subtotal: {{cartTotal|currency}}</p>
             <p>Tax: {{tax|currency}}</p>
             <hr>
             <p>Total: {{total|currency}} </p>
-            <button routerLink="" pButton type="button" class="ui-button-raised ui-button-rounded"
+            <button routerLink="/main/cart" pButton type="button" class="ui-button-raised ui-button-rounded"
                 label="Proceed to Checkout"></button>
         </div>
     </div>
