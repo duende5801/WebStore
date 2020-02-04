@@ -1,4 +1,8 @@
 <ul class="nav justify-content-end">
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+      <i class="fa fa-bars"></i>
+  </label>
   <label routerLink='/home' routerLinkActive="active" class="logo">Case-X</label>
   <li class="nav-item">
     <a (mouseenter)="op.toggle($event)" class="pointer">Device</a>
@@ -13,33 +17,34 @@
     <a routerLink='/contact' routerLinkActive="active" class="nav-link">Contact</a>
   </li>
   <li class="nav-item">
-    <a routerLink='/main/cart' routerLinkActive="active"><i class="fa fa-shopping-cart"><span class="badge badge-warning">{{cartCount}}</span></i></a>
+    <a routerLink='/main/cart' routerLinkActive="active">
+      <i class="fa fa-shopping-cart"><span class="badge badge-warning">{{cartCount}}</span></i>
+    </a>
   </li>
   <li class="nav-item">
     <a (click)="display = true"><i class="fa fa-user pointer"></i></a>
-    <p-sidebar [(visible)]="display" [fullScreen]="true">
-      <br><br class="py-5">
-      <h1 class="d-flex justify-content-center py-5">SIGN IN</h1>
-      <div class="ui-g ui-fluid d-flex justify-content-center">
-        <div class="ui-g-12 ui-md-4">
-          <div class="ui-inputgroup">
-            <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
-            <input type="text" pInputText placeholder="Username">
-          </div>
-          <br><br><br>
-          <input type="password" pPassword pInputText placeholder="password" />
-        </div>
-      </div>
-      <br class="py-5">
-      <div class="row d-flex justify-content-center">
-        <p>Need an Account? </p>
-        <a href="">Create Account </a>
-      </div>
-      <br>
-      <div class="row d-flex justify-content-center">
-        <p-button class="px-5" label="Sign in" (onClick)="handleClick($event)"></p-button>
-        <p-button class="px-5" label="Cancel" (onClick)="handleClick($event)"></p-button>
-      </div>
-    </p-sidebar>
   </li>
 </ul>
+<p-sidebar [(visible)]="display" [fullScreen]="true">
+  <br><br class="py-5">
+  <h1 class="d-flex justify-content-center py-5">SIGN IN</h1>
+  <div class="ui-g ui-fluid d-flex justify-content-center">
+    <div class="ui-g-12 ui-md-4">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+        <input type="text" pInputText placeholder="Username">
+      </div> <br>
+      <input type="password" pPassword pInputText placeholder="password" />
+    </div>
+  </div>
+  <br class="py-5">
+  <div class="row d-flex justify-content-center">
+    <p>Need an Account? </p>
+    <a href="">Create Account </a>
+  </div>
+  <br>
+  <div class="row d-flex justify-content-center">
+    <p-button class="px-5" label="Sign in" (onClick)="handleClick($event)"></p-button>
+    <p-button class="px-5" label="Cancel" (onClick)="handleClick($event)"></p-button>
+  </div>
+</p-sidebar>
