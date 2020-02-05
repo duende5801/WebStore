@@ -1,79 +1,35 @@
-<div class="container background mt-5 mb-3">
-    <h1 class="d-flex justify-content-center pb-4">Account Profile Info</h1>
-    <div class="container">
-        <div class="row pb-4">
-            <div class="col">
-                <span class="ui-float-label">
-                    <input id="float-input-user" type="text" size="65" pInputText> 
-                    <label for="float-input-user">Username</label>
-                </span>
+<app-header></app-header>
+<div class="container background"> 
+    <h1 class="d-flex justify-content-center py-3">Create Account</h1>
+    <fieldset>
+        <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+            <div class="form-group">
+                <label for="fName">First Name</label>
+                <input type="text" class="form-control" id="fName" formControlName="fName">
+                <small class="text-danger" *ngIf="fName.invalid && fName.touched"> ** First name is invalid. </small>
             </div>
-            <div class="col">
-                <span class="ui-float-label">
-                    <input id="float-input-input" type="text" size="65" pInputText> 
-                    <label for="float-input-input">Email</label>
-                </span>
+            <div class="form-group">
+                <label for="lName">Last Name</label>
+                <input type="text" class="form-control" id="lName" formControlName="lName">
+                <small class="text-danger" *ngIf="lName.invalid && lName.touched"> ** Last name is invalid. </small>
             </div>
-        </div>
-        <div class="row py-4">
-            <div class="col">
-                <span class="ui-float-label">
-                    <input id="float-input-addy" type="text" size="100" pInputText> 
-                    <label for="float-input-addy">Address</label>
-                </span>                
+            <div class="form-group">
+                <label for="uName">User Name</label>
+                <input type="text" class="form-control" id="uName" formControlName="uName">
+                <small class="text-danger" *ngIf="uName.invalid && uName.touched"> ** User name is invalid. </small>
             </div>
-        </div>
-        <div class="row pb-4">
-            <div class="col-3">
-                <span class="ui-float-label">
-                    <input id="float-input-city" type="text" size="30" pInputText> 
-                    <label for="float-input-city">City</label>
-                </span>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" formControlName="email">
+                <small class="text-danger" *ngIf="email.invalid && email.touched"> ** email is invalid. </small>
             </div>
-            <div class="col-1">
-                <span class="ui-float-label">
-                    <input id="float-input-st" type="text" size="10" pInputText> 
-                    <label for="float-input-st">State</label>
-                </span>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+                <small class="text-danger" *ngIf="password.invalid && password.touched"> ** Password is invalid, must be 6 characters long</small>
             </div>
-            <div class="col-3 px-5">
-                <span class="ui-float-label">
-                    <input id="float-input-zip" type="text" size="20" pInputText> 
-                    <label for="float-input-zip">Zip</label>
-                </span>
-            </div>
-        </div>
-        <div class="row py-4">
-            <div class="col">
-                <span class="ui-float-label">
-                    <input id="float-input-card" type="text" size="100" pInputText> 
-                    <label for="float-input-card">Card Number</label>
-                </span>
-            </div>
-        </div>
-        <div class="row pb-4">
-            <div class="col">
-                <span class="ui-float-label">
-                    <input id="float-input-card-name" type="text" size="50" pInputText> 
-                    <label for="float-input-card-name">Full Name</label>
-                </span>
-            </div>
-            <div class="col">
-                <span class="ui-float-label">
-                    <input id="float-input-ex-date" type="text" size="10" pInputText> 
-                    <label for="float-input-ex-date">Ex Date</label>
-                </span>
-            </div>
-            <div class="col">
-                <span class="ui-float-label">
-                    <input id="float-input-cvv" type="text" size="10" pInputText>
-                    <label for="float-input-cvv">CVV</label>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row d-flex justify-content-around">
-    <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Edit Info" ></button>
-    <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Previous Orders" ></button>
+            <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+            <button type="button" class="btn btn-secondary" (click)="setValue2()">Set Value</button>
+        </form>
+    </fieldset>
 </div>

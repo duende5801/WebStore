@@ -30,21 +30,24 @@
   <h1 class="d-flex justify-content-center py-5">SIGN IN</h1>
   <div class="ui-g ui-fluid d-flex justify-content-center">
     <div class="ui-g-12 ui-md-4">
-      <div class="ui-inputgroup">
+      <div class="ui-inputgroup d-flex justify-content-center">
         <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
-        <input type="text" pInputText placeholder="Username">
-      </div> <br>
-      <input type="password" pPassword pInputText placeholder="password" />
+        <input #un type="text" pInputText placeholder="Username">
+      </div> 
+      <br>
+      <div class="ui-inputgroup d-flex justify-content-center">
+        <span class="ui-inputgroup-addon"><i class="fa fa-key" style="line-height: 1.25;"></i></span>
+        <input #pw type="password" pPassword pInputText placeholder="password" />
+      </div> 
     </div>
   </div>
   <br class="py-5">
   <div class="row d-flex justify-content-center">
     <p>Need an Account? </p>
-    <a href="">Create Account </a>
+    <a routerLink="/profile">Create Account </a>
   </div>
   <br>
   <div class="row d-flex justify-content-center">
-    <p-button class="px-5" label="Sign in" (onClick)="handleClick($event)"></p-button>
-    <p-button class="px-5" label="Cancel" (onClick)="handleClick($event)"></p-button>
+    <p-button class="px-5" label="Sign in" (click)='logIn(un.value,pw.value)'></p-button>
   </div>
 </p-sidebar>

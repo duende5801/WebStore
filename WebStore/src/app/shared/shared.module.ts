@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 
@@ -28,7 +29,8 @@ import { RouterModule } from '@angular/router';
     RatingModule,
     FormsModule,
     ToastModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     AccountProfileComponent,
@@ -40,7 +42,8 @@ import { RouterModule } from '@angular/router';
     ToastModule,
     ButtonModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

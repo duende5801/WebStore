@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../cart.service';
 import { PhoneCase } from '../../interfaces/phone-case';
+import { UserService } from '../../user.service';
 
 interface Phone {
   name: string;
@@ -23,7 +24,7 @@ export class HeaderComponent implements OnInit {
   cartItems: PhoneCase[] = [];
   showList = false;
 
-  constructor(private cService: CartService) {
+  constructor(private cService: CartService, private uService: UserService) {
   }
   ngOnInit() {
     this.products = [
@@ -40,8 +41,12 @@ export class HeaderComponent implements OnInit {
   toggleList() {
     this.showList = !this.showList;
   }
-  removeFromCart(item, index) {
-    this.cService.removeProduct(item, index);
+  logIn(userName, password) {
+    if (this.uService.checkPassword(userName, password)) {
+      alert('Your Logged in');
+    } else {
+      alert('Please try again');
+    }
   }
 
 
