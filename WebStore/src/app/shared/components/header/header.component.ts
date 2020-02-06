@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../cart.service';
 import { PhoneCase } from '../../interfaces/phone-case';
 import { UserService } from '../../user.service';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 interface Phone {
   name: string;
@@ -24,7 +25,7 @@ export class HeaderComponent implements OnInit {
   cartItems: PhoneCase[] = [];
   showList = false;
 
-  constructor(private cService: CartService, private uService: UserService) {
+  constructor(private cService: CartService, private uService: UserService, private route: ActivatedRoute, private router: Router) {
   }
   ngOnInit() {
     this.products = [
@@ -33,8 +34,19 @@ export class HeaderComponent implements OnInit {
     this.cService.$cartQuantity.subscribe(count => {
       this.cartCount = count;
     });
-
+    const id = this.route.snapshot.paramMap.get('id');
+    this.setObject(id);
+    this.router.events.subscribe(event => {
+      console.log(event);
+      if (event instanceof NavigationEnd) {
+        const id = this.route.snapshot.paramMap.get('id');
+        this.setObject(id);
+      }
+    });
   }
+  setObject(id: string) {
+    this.products.find(x => x.name === id);
+    }
   formDisplay() {
     this.display = !this.display;
   }
@@ -44,7 +56,6 @@ export class HeaderComponent implements OnInit {
   logIn(userName, password) {
     if (this.uService.checkPassword(userName, password)) {
       alert('Your Logged in');
-      
     } else {
       alert('Please try again');
     }

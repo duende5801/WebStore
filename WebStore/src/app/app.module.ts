@@ -15,6 +15,7 @@ import { ContactComponent } from './views/pages/contact/contact.component';
 import { ShippingFormComponent } from './views/pages/shipping-form/shipping-form.component';
 import { CreditFormComponent } from './views/pages/credit-form/credit-form.component';
 import { SharedModule } from './shared/shared.module';
+import { CompletePurchaseComponent } from './views/pages/complete-purchase/complete-purchase.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SharedModule } from './shared/shared.module';
     LandingComponent,
     ContactComponent,
     ShippingFormComponent,
-    CreditFormComponent
+    CreditFormComponent,
+    CompletePurchaseComponent
   ],
   imports: [
     BrowserModule,

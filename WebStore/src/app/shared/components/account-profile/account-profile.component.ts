@@ -34,7 +34,7 @@ export class AccountProfileComponent implements OnInit {
   }
   submitForm() {
     if (this.uService.checkIfUserExists(this.uName.value)) {
-      alert('use a different username')
+      alert('use a different username');
     } else {
       if (this.userForm.invalid) {
         alert('Hey Fix your errors!');
