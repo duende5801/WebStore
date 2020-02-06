@@ -3,6 +3,7 @@ import { CartService } from '../../cart.service';
 import { PhoneCase } from '../../interfaces/phone-case';
 import { UserService } from '../../user.service';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { DataService } from '../../data.service';
 
 interface Phone {
   name: string;
@@ -25,7 +26,7 @@ export class HeaderComponent implements OnInit {
   cartItems: PhoneCase[] = [];
   showList = false;
 
-  constructor(private cService: CartService, private uService: UserService, private route: ActivatedRoute, private router: Router) {
+  constructor(private cService: CartService, private uService: UserService, private route: ActivatedRoute, private router: Router, private dService: DataService) {
   }
   ngOnInit() {
     this.products = [
@@ -37,10 +38,10 @@ export class HeaderComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.setObject(id);
     this.router.events.subscribe(event => {
-      console.log(event);
+      //console.log(event);
       if (event instanceof NavigationEnd) {
-        const id = this.route.snapshot.paramMap.get('id');
-        this.setObject(id);
+        const id = this.route.firstChild.snapshot.paramMap.get('id');
+        this.dService.updateProPage(id);
       }
     });
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { PhoneCase } from 'src/app/shared/interfaces/phone-case';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/shared/data.service';
@@ -14,7 +14,7 @@ import {MessageService} from 'primeng/api';
   styleUrls: ['./products.component.scss'],
   providers: [MessageService]
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnChanges {
 
   phoneType: string;
   products: PhoneCase[];
@@ -26,14 +26,19 @@ export class ProductsComponent implements OnInit {
     this.messageService.add({severity: 'success', summary: 'Success Message', detail: 'Order submitted'});
 }
 ngOnInit() {
-    this.products = this.dService.getProducts();
+    this.dService.currProducts.subscribe(x =>{
+      this.products = x;
+      console.log(x)
+    });
+    // console.log(this.router.snapshot.paramMap)
     this.phoneType = this.router.snapshot.paramMap.get('id');
-    this.products = this.filterProducts(this.phoneType);
+    this.dService.updateProPage(this.phoneType);
+    //this.products = this.filterProducts(this.phoneType);
   }
 
-  filterProducts(x: string): PhoneCase[] {
-    return this.products.filter(products => products.phone === this.phoneType);
-  }
+  // filterProducts(x: string): PhoneCase[] {
+  //   return this.products.filter(products => products.phone === this.phoneType);
+  // }
   addToCart(item) {
     this.cService.addItemsToCart(item);
     this.showSuccess();
@@ -48,4 +53,7 @@ ngOnInit() {
   //   console.log("this is the cart[]", this.cart);
   // }
 
+  ngOnChanges() {
+    console.log('products changed');
+  }
 }

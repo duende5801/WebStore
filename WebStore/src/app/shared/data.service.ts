@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { PhoneCase } from './interfaces/phone-case';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-
+  
   products: PhoneCase[] = [
     {
       id: 1,
@@ -278,11 +279,21 @@ export class DataService {
       quantity: 1
     }
   ];
+  currProducts: BehaviorSubject<PhoneCase[]> = new BehaviorSubject<PhoneCase[]>(this.products);
 
   constructor() { 
 
   }
   getProducts(): PhoneCase[]{
       return this.products;
+  }
+
+  updateProPage(proType: string) {
+    const products = this.filterProducts(proType)
+    this.currProducts.next(products);
+  }
+
+  filterProducts(x: string): PhoneCase[] {
+    return this.products.filter(products => products.phone === x);
   }
 }
