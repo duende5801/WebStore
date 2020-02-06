@@ -9,11 +9,26 @@ export class UserService {
 
   constructor() { }
   checkPassword(userName: string, password: string): boolean {
-    // this.loggedInUser.userName = userName;
-    return userName === this.userAccts[0].uName ? (password === this.userAccts[0].password ? true : false) : false;
+    let result = false;
+    this.userAccts = JSON.parse(localStorage.getItem('userObj'));
+    if(this.userAccts.filter (x => {
+      (x.uName === userName)&&(x.password === password)
+    })){
+      result = true;
+    }
+    return result;
   }
-  setUserData(userData: User[]) {
-    this.userAccts = userData;
-    console.log(this.userAccts);
+  setUserData(userData: User) {
+    this.userAccts.push(userData);
+    localStorage.setItem('userObj', JSON.stringify(this.userAccts));
+    console.log('this is the User Service array', this.userAccts);
+  }
+  checkIfUserExists(userName: string): boolean {
+    // going to search for user name so there are no dups
+    let result = false;
+    if (this.userAccts.find(x => userName.toUpperCase() === x.uName) !== undefined){
+      result = true;
+    }
+    return result;
   }
 }

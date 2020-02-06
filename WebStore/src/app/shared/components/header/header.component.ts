@@ -44,6 +44,7 @@ export class HeaderComponent implements OnInit {
   logIn(userName, password) {
     if (this.uService.checkPassword(userName, password)) {
       alert('Your Logged in');
+      
     } else {
       alert('Please try again');
     }

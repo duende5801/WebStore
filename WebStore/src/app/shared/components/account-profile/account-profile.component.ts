@@ -33,21 +33,21 @@ export class AccountProfileComponent implements OnInit {
     });
   }
   submitForm() {
-    if (this.userForm.invalid) {
-      alert('Hey Fix your errors!');
+    if (this.uService.checkIfUserExists(this.uName.value)) {
+      alert('use a different username')
     } else {
-      alert('Successful');
-      this.acctUser = JSON.stringify(this.userForm.value);
-      localStorage.setItem('userObj', this.acctUser);
-      console.log(this.acctUser);
+      if (this.userForm.invalid) {
+        alert('Hey Fix your errors!');
+      } else {
+        alert('Successful');
+        this.uService.setUserData(this.userForm.value);
       }
     }
-    setValue2() {
-      this.parseAcctUser = JSON.parse(localStorage.getItem('userObj'));
-      this.userForm.setValue(this.parseAcctUser);
-      this.userStored.push(this.parseAcctUser);
-      this.uService.setUserData(this.userStored);
-      console.log(this.parseAcctUser);
+  }
+  setValue2() {
+    this.parseAcctUser = JSON.parse(localStorage.getItem('userObj'));
+    this.userForm.setValue(this.parseAcctUser);
+    console.log(this.parseAcctUser);
   }
 
 }

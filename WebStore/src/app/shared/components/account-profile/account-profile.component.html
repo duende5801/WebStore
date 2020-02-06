@@ -29,7 +29,6 @@
                 <small class="text-danger" *ngIf="password.invalid && password.touched"> ** Password is invalid, must be 6 characters long</small>
             </div>
             <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
-            <button type="button" class="btn btn-secondary" (click)="setValue2()">Set Value</button>
         </form>
     </fieldset>
 </div>
