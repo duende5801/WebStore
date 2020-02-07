@@ -11,13 +11,19 @@ export class UserService {
   checkPassword(userName: string, password: string): boolean {
     let result = false;
     this.userAccts = JSON.parse(localStorage.getItem('userObj'));
-    // always returns true :(
-    if (this.userAccts.filter (x => {
-      (x.uName === userName) && (x.password === password)
-    })) {
-      result = true;
+    for(let i=0; i < this.userAccts.length; i++){
+      if(userName === this.userAccts[i].uName && password === this.userAccts[i].password){
+        result = true;
+      }
     }
     return result;
+    // // always returns true :(
+    // if (this.userAccts.filter (x => {
+    //   (x.uName === userName) && (x.password === password)
+    // })) {
+    //   result = true;
+    // }
+    // return result;
   }
   setUserData(userData: User) {
     this.userAccts.push(userData);

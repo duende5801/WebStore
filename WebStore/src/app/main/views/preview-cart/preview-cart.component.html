@@ -6,7 +6,7 @@
             <hr>
             <p>Total: {{total|currency}} </p>
             <button routerLink="/complete-purchase" pButton type="button" class="ui-button-raised ui-button-rounded"
-                label="Proceed to Checkout"></button>
+                label="Proceed to Checkout" [disabled]="emptyCart()"></button>
         </div>
     </div>
 </div>

@@ -10,10 +10,11 @@ import { CreditFormComponent } from './pages/credit-form/credit-form.component';
 import { PreviewCartComponent } from '../main/views/preview-cart/preview-cart.component';
 import { SharedModule } from 'primeng/api/shared';
 import { CompletePurchaseComponent } from './pages/complete-purchase/complete-purchase.component';
+import { OrderCompleteComponent } from './pages/order-complete/order-complete.component';
 
 
 @NgModule({
-  declarations: [LandingComponent, ContactComponent, ShippingFormComponent, CreditFormComponent, PreviewCartComponent, CompletePurchaseComponent],
+  declarations: [LandingComponent, ContactComponent, ShippingFormComponent, CreditFormComponent, PreviewCartComponent, CompletePurchaseComponent, OrderCompleteComponent],
   imports: [
     CommonModule,
     SidebarModule,

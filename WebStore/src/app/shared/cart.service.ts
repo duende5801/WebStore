@@ -47,6 +47,7 @@ export class CartService {
     this.$cartTotal.next(this.cartTotal);
     this.$cartQuantity.next(this.cartQuantity);
   }
+
 // use this set/get method if not using observables
 /*   getCartItems(): CartItem[] {
     return this.cart;

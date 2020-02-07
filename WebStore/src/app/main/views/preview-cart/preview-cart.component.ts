@@ -20,5 +20,12 @@ export class PreviewCartComponent implements OnInit {
       this.total = this.cartTotal + this.tax;
     });
   }
+  emptyCart() {
+    let result = false;
+    if(this.cService.cartItems.length < 1){
+      result = true;
+    }
+    return result;
+  }
 
 }

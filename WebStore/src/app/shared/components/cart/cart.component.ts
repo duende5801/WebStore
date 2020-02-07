@@ -23,5 +23,12 @@ export class CartComponent implements OnInit {
   removeItem(item, index) {
     this.cService.removeProduct(item, index);
   }
+  emptyCart() {
+    let result = false;
+    if(this.cService.cartItems.length < 1){
+      result = true;
+    }
+    return result;
+  }
 
 }
