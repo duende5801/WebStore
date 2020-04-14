@@ -17,6 +17,7 @@ import { CreditFormComponent } from './views/pages/credit-form/credit-form.compo
 import { SharedModule } from './shared/shared.module';
 import { CompletePurchaseComponent } from './views/pages/complete-purchase/complete-purchase.component';
 import { OrderCompleteComponent } from './views/pages/order-complete/order-complete.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { OrderCompleteComponent } from './views/pages/order-complete/order-compl
     ShippingFormComponent,
     CreditFormComponent,
     CompletePurchaseComponent,
-    OrderCompleteComponent
+    OrderCompleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +40,7 @@ import { OrderCompleteComponent } from './views/pages/order-complete/order-compl
     InputTextareaModule,
     DropdownModule,
     FormsModule,
+    HttpClientModule,
     SharedModule
   ],
   providers: [],

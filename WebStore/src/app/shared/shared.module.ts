@@ -12,6 +12,8 @@ import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ResultComponent } from './components/result/result.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { RouterModule } from '@angular/router';
     AccountProfileComponent,
     CartComponent,
     ProductsComponent,
-    HeaderComponent
+    HeaderComponent,
+    CheckoutComponent,
+    ResultComponent
   ],
   imports: [
     CommonModule,

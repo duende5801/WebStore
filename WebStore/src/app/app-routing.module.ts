@@ -5,6 +5,8 @@ import { ContactComponent } from './views/pages/contact/contact.component';
 import { AccountProfileComponent } from './shared/components/account-profile/account-profile.component';
 import { CompletePurchaseComponent } from './views/pages/complete-purchase/complete-purchase.component';
 import { OrderCompleteComponent } from './views/pages/order-complete/order-complete.component';
+import { ResultComponent } from './shared/components/result/result.component';
+import { CheckoutComponent } from './shared/components/checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'complete-purchase', component: CompletePurchaseComponent },
   { path: 'order-complete', component: OrderCompleteComponent },
+  { path: 'result', component: ResultComponent, pathMatch: 'full' },
+  { path: 'checkout', component: CheckoutComponent, pathMatch: 'full' },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {loadStripe} from '@stripe/stripe-js';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-credit-form',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CreditFormComponent implements OnInit {
 
   constructor() { }
+
 
   ngOnInit() {
   }
