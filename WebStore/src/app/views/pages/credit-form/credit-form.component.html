@@ -1,4 +1,4 @@
-<div class="container background mt-5 mb-3">
+<!-- <div class="container background mt-5 mb-3">
     <h1 class="d-flex justify-content-center pb-4">Credit Card Info</h1>
     <div class="container">
         <div class="row py-4">
@@ -58,23 +58,19 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div>
-    <p>
-        Order Request:
-      </p>
-      <p>
-        {{orderRequest | json}}
-      </p>
-      <button (click)="submit()">Pay</button>
-    <!-- <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout">
-        <div class="form-row">
-          <label for="card-info">Card Info</label>
-          <div id="card-info" #cardInfo></div>
-      
-          <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
-        </div>
-      
-        <button type="submit">Pay $777</button>
-      </form> -->
+    <div>
+        <h4 class="d-flex justify-content-center">
+            This is a test mode environment. Actual payments do not work!
+        </h4>
+          <p class="d-flex justify-content-center">
+            If you want to complete this fake transaction enter "4242 4242 4242 4242" as the card number.
+          </p>
+    </div>
+      <!-- <button (click)="submit()">Pay</button> -->
+      <div class="d-flex justify-content-around pb-5 mb-5">
+        <button routerLink="/main/cart" type="submit" class="btn btn-primary">Back to Cart</button>
+        <button type="submit" (click)="submit()" class="btn btn-primary">Submit Order</button>
+    </div>
 </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderRequest } from 'src/app/shared/interfaces/order';
+import { ApiServiceService } from 'src/app/shared/api-service.service';
+
 
 @Component({
   selector: 'app-complete-purchase',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./complete-purchase.component.scss']
 })
 export class CompletePurchaseComponent implements OnInit {
+  public sessionId: string;
+  public orderRequest: OrderRequest[] = [];
 
-  constructor() { }
+  constructor(private service: ApiServiceService) { }
 
   ngOnInit() {
-  }
 
   }
+}
